@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BanSanGo.Models.ChucVu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách Chức Vụ</h2>
+
+<!-- Tạo mới chức vụ -->
+<form action="@Url.Action("Create", "ChucVu")" method="post" style="display: flex; align-items: center;">
+    @Html.AntiForgeryToken()
+    <input type="text" name="TenCV" class="form-control me-2" placeholder="Nhập tên chức vụ" style="width: 200px;" />
+    <button class="btn btn-primary">Thêm</button>
+</form>
+
+<!-- Bảng danh sách chức vụ -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Chức Vụ</th>
+            <th>Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TenCV)</td>
+                <td>
+                    <!-- Chỉnh sửa -->
+                    <form action="@Url.Action("Edit", "ChucVu")" method="get" style="display:inline;">
+                        <input type="hidden" name="id" value="@item.MaCV" />
+                        <button type="submit" class="btn btn-warning btn-sm">Sửa</button>
+                    </form> |
+
+                    <!-- Xóa -->
+                    <form action="@Url.Action("Delete", "ChucVu")" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken() <!-- Thêm AntiForgeryToken vào đây -->
+                        <input type="hidden" name="id" value="@item.MaCV" />
+                        <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

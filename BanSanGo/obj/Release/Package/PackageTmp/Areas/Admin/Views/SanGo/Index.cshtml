@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BanSanGo.Models.SanGo>
+
+@{
+    ViewBag.Title = "Danh sách Sàn Gỗ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center my-4">Danh sách Sàn Gỗ</h2>
+
+<p class="text-right">
+    @Html.ActionLink("Tạo mới sản phẩm", "Create", new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Tên Sản Gỗ</th> <!-- Tên Sản Gỗ -->
+            <th>Số Lượng</th> <!-- Số Lượng -->
+            <th>Giá Bán (VND)</th> <!-- Giá Bán (VND) -->
+            <th>Hình Ảnh</th> <!-- Hình Ảnh -->
+            <th>Loại Sàn Gỗ</th> <!-- Loại Sàn Gỗ -->
+            <th>Hành Động</th> <!-- Hành Động -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TenSanGo)</td>
+                <td>@Html.DisplayFor(modelItem => item.SoLuong)</td>
+                <td>@String.Format("{0:N0} VNĐ", item.GiaBan)</td> <!-- Định dạng Giá Bán -->
+                <td>
+                    @if (!string.IsNullOrEmpty(item.HinhAnh))
+                    {
+                        <img src="@item.HinhAnh" alt="Hình ảnh sản phẩm" class="img-thumbnail fixed-img" style="max-width: 100px; max-height: 100px;" />
+                    }
+                    else
+                    {
+                        <span>Chưa có hình ảnh</span>
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.LoaiSanGo.TenLoaiSanGo)</td>
+                <td>
+                    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.MaSanGo, @class = "btn btn-warning btn-sm" }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaSanGo, @class = "btn btn-info btn-sm" }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaSanGo, @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

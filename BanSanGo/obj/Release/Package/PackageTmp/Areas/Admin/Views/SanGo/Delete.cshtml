@@ -1,0 +1,67 @@
+﻿@model BanSanGo.Models.SanGo
+
+@{
+    ViewBag.Title = "Xóa sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center my-4">Xóa Sản Phẩm</h2>
+
+<h3 class="text-center">Bạn có chắc chắn muốn xóa sản phẩm này?</h3>
+
+<div class="card shadow-lg mb-4">
+    <div class="card-header bg-danger text-white">
+        <h4 class="m-0">@Model.TenSanGo</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <!-- Thông tin sản phẩm -->
+            <div class="col-md-6">
+                <h5 class="text-danger">Thông tin sản phẩm</h5>
+                <dl class="row">
+                    <dt class="col-sm-4">Tên sản phẩm:</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.TenSanGo)</dd>
+
+                    <dt class="col-sm-4">Số lượng:</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.SoLuong)</dd>
+
+                    <dt class="col-sm-4">Giá bán:</dt>
+                    <dd class="col-sm-8">@String.Format("{0:N0} VNĐ", Model.GiaBan)</dd>
+
+                    <dt class="col-sm-4">Mô tả:</dt>
+                    <dd class="col-sm-8" style="word-wrap: break-word;">@Html.DisplayFor(model => model.MoTa)</dd>
+
+                    <dt class="col-sm-4">Loại sản phẩm:</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.LoaiSanGo.TenLoaiSanGo)</dd>
+                </dl>
+            </div>
+
+            <!-- Hình ảnh sản phẩm -->
+            <div class="col-md-6">
+                <h5 class="text-danger">Hình ảnh sản phẩm</h5>
+                <div class="text-center">
+                    @if (!string.IsNullOrEmpty(Model.HinhAnh))
+                    {
+                        <img src="@Model.HinhAnh" alt="Hình ảnh sản phẩm" class="img-fluid rounded shadow-sm" />
+                    }
+                    else
+                    {
+                        <p class="text-muted">Chưa có hình ảnh</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-between">
+        <div>
+            @Html.ActionLink("Quay lại danh sách", "Index", new { @class = "btn btn-secondary btn-sm" })
+        </div>
+        <div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Xóa sản phẩm" class="btn btn-danger btn-sm" />
+            }
+        </div>
+    </div>
+</div>

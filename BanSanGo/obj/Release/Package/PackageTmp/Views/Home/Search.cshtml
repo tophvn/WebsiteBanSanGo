@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BanSanGo.Models.SanGo>
+
+@{
+    ViewBag.Title = "Search Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-5 text-primary">Kết Quả Tìm Kiếm</h2>
+    @if (!Model.Any())
+    {
+        <p class="text-center">Không tìm thấy sản phẩm nào khớp với từ khóa.</p>
+    }
+    else
+    {
+        <div class="row" id="product-list">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4 mb-4 product" data-price="@product.GiaBan">
+                    <div class="card shadow-sm h-100 position-relative">
+                        <img src="@Url.Content(product.HinhAnh)" class="card-img-top img-fluid" alt="@product.TenSanGo" />
+
+                        <div class="price-tag position-absolute top-0 end-0 bg-warning text-dark px-2 py-1 rounded-start">
+                            @if (product.GiaBan.HasValue)
+                            {
+                                <span>@string.Format("{0:0,0} VNĐ", product.GiaBan)</span>
+                            }
+                            else
+                            {
+                                <span>Liên hệ để biết giá</span>
+                            }
+                        </div>
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center text-uppercase">@product.TenSanGo</h5>
+                            <p class="card-text">
+                                <strong>Số lượng:</strong> @product.SoLuong<br />
+                            </p>
+                            <a href="@Url.Action("Detail", "Home", new { id = product.MaSanGo })" class="btn btn-primary mt-auto">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

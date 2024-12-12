@@ -1,0 +1,85 @@
+﻿@model BanSanGo.Models.SanGo
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center my-4">Tạo Mới Sản Phẩm</h2>
+
+@using (Html.BeginForm("Create", "SanGo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="card shadow-lg p-4">
+        <h4 class="card-title">Thông tin sản phẩm</h4>
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <!-- Tên sản phẩm -->
+        <div class="form-group row mb-3">
+            @Html.LabelFor(model => model.TenSanGo, "Tên sản phẩm", htmlAttributes: new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenSanGo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenSanGo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Số lượng -->
+        <div class="form-group row mb-3">
+            @Html.LabelFor(model => model.SoLuong, "Số lượng", htmlAttributes: new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SoLuong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SoLuong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Giá bán -->
+        <div class="form-group row mb-3">
+            @Html.LabelFor(model => model.GiaBan, "Giá bán (VND)", htmlAttributes: new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GiaBan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GiaBan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Loại sản gỗ -->
+        <div class="form-group row mb-3">
+            @Html.LabelFor(model => model.MaLoaiSanGo, "Loại sản gỗ", htmlAttributes: new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("MaLoaiSanGo", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaLoaiSanGo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Mô tả -->
+        <div class="form-group row mb-3">
+            @Html.LabelFor(model => model.MoTa, "Mô tả sản phẩm", htmlAttributes: new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                <textarea name="MoTa" class="form-control" rows="5">@Html.DisplayFor(model => model.MoTa)</textarea>
+                @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Hình ảnh -->
+        <div class="form-group row mb-3">
+            @Html.LabelFor(model => model.HinhAnh, "Chọn hình ảnh", htmlAttributes: new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                <input type="file" name="HinhAnh" class="form-control" />
+                @Html.ValidationMessageFor(model => model.HinhAnh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Nút submit -->
+        <div class="form-group row mb-3">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Tạo sản phẩm" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="text-center mt-4">
+    @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-secondary" })
+</div>

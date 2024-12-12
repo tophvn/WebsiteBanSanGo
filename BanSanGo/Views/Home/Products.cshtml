@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BanSanGo.Models.SanGo>
+@{
+    ViewBag.Title = "Sản Phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-5 text-primary">SẢN PHẨM</h2>
+        <div class="row g-4" id="product-list">
+            @foreach (var product in Model)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card product-card shadow-sm border-0 h-100 position-relative">
+                        <div class="product-image">
+                            <img src="@Url.Content(product.HinhAnh)" class="card-img-top img-fluid" alt="@product.TenSanGo">
+                        </div>
+                        <div class="price-tag bg-warning text-dark text-center rounded-pill py-1 px-3 shadow position-absolute">
+                            @if (product.GiaBan.HasValue)
+                            {
+                                <span>@string.Format("{0:0,0} VNĐ", product.GiaBan)</span>
+                            }
+                            else
+                            {
+                                <span>Liên hệ</span>
+                            }
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center text-truncate" title="@product.TenSanGo">
+                                @product.TenSanGo
+                            </h5>
+                            <p class="card-text text-center">
+                                <strong>Số lượng:</strong> @product.SoLuong
+                            </p>
+                            <a href="@Url.Action("Detail", "Home", new { id = product.MaSanGo })" class="btn btn-outline-primary mt-auto">
+                                Chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    <br />
+    </div>
+
+    @if (ViewBag.TotalProducts > 8)
+    {
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                @if (ViewBag.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Products", new { page = ViewBag.CurrentPage - 1 })">Trước</a>
+                    </li>
+                }
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("Products", new { page = i })">@i</a>
+                    </li>
+                }
+                @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Products", new { page = ViewBag.CurrentPage + 1 })">Tiếp</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>

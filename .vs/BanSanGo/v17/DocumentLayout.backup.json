@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\data\\test\\BanSanGo\\BanSanGo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|D:\\data\\test\\BanSanGo\\BanSanGo\\bansango\\views\\home\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|solutionrelative:bansango\\views\\home\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|d:\\data\\test\\bansango\\bansango\\bansango\\views\\home\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|solutionrelative:bansango\\views\\home\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|D:\\data\\test\\BanSanGo\\BanSanGo\\bansango\\views\\home\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|solutionrelative:bansango\\views\\home\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|d:\\data\\test\\bansango\\bansango\\bansango\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|solutionrelative:bansango\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|d:\\data\\test\\bansango\\bansango\\bansango\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|solutionrelative:bansango\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|D:\\data\\test\\BanSanGo\\BanSanGo\\bansango\\views\\home\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|solutionrelative:bansango\\views\\home\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|D:\\data\\test\\BanSanGo\\BanSanGo\\bansango\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|solutionrelative:bansango\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|D:\\data\\test\\BanSanGo\\BanSanGo\\bansango\\views\\home\\producttype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|solutionrelative:bansango\\views\\home\\producttype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|D:\\data\\test\\BanSanGo\\BanSanGo\\bansango\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18834BEE-D664-4107-9FAD-D4DF769627B6}|BanSanGo\\BanSanGo.csproj|solutionrelative:bansango\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Search.cshtml",
+              "DocumentMoniker": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Search.cshtml",
+              "RelativeDocumentMoniker": "BanSanGo\\Views\\Home\\Search.cshtml",
+              "ToolTip": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Search.cshtml",
+              "RelativeToolTip": "BanSanGo\\Views\\Home\\Search.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T05:28:00.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Web.config",
+              "RelativeDocumentMoniker": "BanSanGo\\Web.config",
+              "ToolTip": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Web.config",
+              "RelativeToolTip": "BanSanGo\\Web.config",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-12T05:08:56.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BanSanGo\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BanSanGo\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAAAJIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-11T13:46:45.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cart.cshtml",
+              "DocumentMoniker": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Cart.cshtml",
+              "RelativeDocumentMoniker": "BanSanGo\\Views\\Home\\Cart.cshtml",
+              "ToolTip": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Cart.cshtml",
+              "RelativeToolTip": "BanSanGo\\Views\\Home\\Cart.cshtml",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAYwIMAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-11T13:46:15.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Products.cshtml",
+              "DocumentMoniker": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Products.cshtml",
+              "RelativeDocumentMoniker": "BanSanGo\\Views\\Home\\Products.cshtml",
+              "ToolTip": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Products.cshtml",
+              "RelativeToolTip": "BanSanGo\\Views\\Home\\Products.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-11T13:46:14.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Detail.cshtml",
+              "RelativeDocumentMoniker": "BanSanGo\\Views\\Home\\Detail.cshtml",
+              "ToolTip": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Detail.cshtml",
+              "RelativeToolTip": "BanSanGo\\Views\\Home\\Detail.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwFMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-11T13:34:06.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductType.cshtml",
+              "DocumentMoniker": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\ProductType.cshtml",
+              "RelativeDocumentMoniker": "BanSanGo\\Views\\Home\\ProductType.cshtml",
+              "ToolTip": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\ProductType.cshtml",
+              "RelativeToolTip": "BanSanGo\\Views\\Home\\ProductType.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-11T11:30:21.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "BanSanGo\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "BanSanGo\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-11T10:48:26.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "BanSanGo\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\data\\test\\BanSanGo\\BanSanGo\\BanSanGo\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "BanSanGo\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T07:01:50.182Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

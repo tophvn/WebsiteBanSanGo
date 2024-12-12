@@ -1,0 +1,46 @@
+﻿@model BanSanGo.Models.LoaiSanGo
+
+@{
+    ViewBag.Title = "Sửa Loại Sản Gỗ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sửa Loại Sản Gỗ</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <!-- Hidden field for MaLoaiSanGo -->
+        @Html.HiddenFor(model => model.MaLoaiSanGo)
+
+        <!-- Hiển thị tên loại sản gỗ cũ -->
+        <div class="form-group row">
+            <label class="control-label col-md-2">Tên Loại Sản Gỗ Cũ</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.TenLoaiSanGo</p>
+            </div>
+        </div>
+
+        <!-- Trường chỉnh sửa tên loại sản gỗ mới -->
+        <div class="form-group row">
+            <label class="control-label col-md-2">Tên Loại Sản Gỗ Mới</label> <!-- Thay label ở đây -->
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenLoaiSanGo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenLoaiSanGo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Nút Lưu và Quay lại -->
+        <div class="form-group row">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu" class="btn btn-success" />
+                <a href="@Url.Action("Index", "LoaiSanGo")" class="btn btn-secondary ml-2">Quay lại</a>
+            </div>
+        </div>
+    </div>
+}

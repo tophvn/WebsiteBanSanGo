@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BanSanGo.Models.SanGo>
+@{
+    ViewBag.Title = "Loại sàn gỗ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row g-4" id="product-list">
+    @foreach (var product in Model)
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card product-card shadow-sm border-0 h-100 position-relative">
+                <div class="product-image">
+                    <img src="@Url.Content(product.HinhAnh)" class="card-img-top img-fluid" alt="@product.TenSanGo" />
+                </div>
+                <div class="price-tag bg-warning text-dark text-center rounded-pill py-1 px-3 shadow position-absolute"
+                     style="top: 10px; right: 10px;">
+                    @if (product.GiaBan.HasValue)
+                    {
+                        <span>@string.Format("{0:0,0} VNĐ", product.GiaBan)</span>
+                    }
+                    else
+                    {
+                        <span>Liên hệ</span>
+                    }
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-center text-truncate" title="@product.TenSanGo">
+                        @product.TenSanGo
+                    </h5>
+                    <p class="card-text text-center">
+                        <strong>Số lượng:</strong> @product.SoLuong
+                    </p>
+                    <a href="@Url.Action("Detail", "Home", new { id = product.MaSanGo })"
+                       class="btn btn-outline-primary mt-auto">
+                        Chi tiết
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

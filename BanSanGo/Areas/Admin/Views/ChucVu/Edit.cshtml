@@ -1,0 +1,46 @@
+﻿@model BanSanGo.Models.ChucVu
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sửa Chức Vụ</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <!-- Hidden field for MaCV -->
+    @Html.HiddenFor(model => model.MaCV)
+
+    <!-- Hiển thị tên chức vụ cũ -->
+    <div class="form-group row">
+        <label class="control-label col-md-2">Tên Chức Vụ Cũ</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.TenCV</p>
+        </div>
+    </div>
+
+    <!-- Trường chỉnh sửa tên chức vụ mới -->
+    <div class="form-group row">
+        <label class="control-label col-md-2">Tên Chức Vụ Mới</label> <!-- Thay label ở đây -->
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenCV, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenCV, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <!-- Nút Lưu và Quay lại -->
+    <div class="form-group row">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Lưu" class="btn btn-success" />
+            <a href="@Url.Action("Index", "ChucVu")" class="btn btn-secondary ml-2">Quay lại</a>
+        </div>
+    </div>
+</div>
+}

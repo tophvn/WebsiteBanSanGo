@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BanSanGo.Models.LoaiSanGo>
+
+@{
+    ViewBag.Title = "Danh Sách Loại Sản Gỗ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh Sách Loại Sản Gỗ</h2>
+
+<!-- Tạo mới loại sản gỗ -->
+<form action="@Url.Action("Create", "LoaiSanGo")" method="post" style="display: flex; align-items: center;">
+    @Html.AntiForgeryToken()
+    <input type="text" name="TenLoaiSanGo" class="form-control me-2" placeholder="Nhập tên loại sản gỗ" style="width: 400px;" />
+    <button class="btn btn-primary">Thêm</button>
+</form>
+
+<!-- Bảng danh sách loại sản gỗ -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên Loại Sản Gỗ</th>
+            <th>Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TenLoaiSanGo)</td>
+                <td>
+                    <!-- Chỉnh sửa -->
+                    <form action="@Url.Action("Edit", "LoaiSanGo")" method="get" style="display:inline;">
+                        <input type="hidden" name="id" value="@item.MaLoaiSanGo" />
+                        <button type="submit" class="btn btn-warning btn-sm">Sửa</button>
+                    </form> |
+
+                    <!-- Xóa -->
+                    <form action="@Url.Action("Delete", "LoaiSanGo")" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken() <!-- Thêm AntiForgeryToken vào đây -->
+                        <input type="hidden" name="id" value="@item.MaLoaiSanGo" />
+                        <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

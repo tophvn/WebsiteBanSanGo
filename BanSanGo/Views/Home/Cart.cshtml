@@ -1,0 +1,139 @@
+﻿@model List<BanSanGo.Models.SanGo>
+
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-5 text-primary">Giỏ Hàng Của Bạn</h2>
+
+    @if (Model == null || !Model.Any())
+    {
+        <p class="text-center">Giỏ hàng của bạn đang trống.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Số Lượng</th>
+                    <th>Tổng</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="@Url.Content(item.HinhAnh)" alt="@item.TenSanGo" style="width: 50px; height: auto;" />
+                            @item.TenSanGo
+                        </td>
+                        <td>
+                            @if (item.GiaBan.HasValue)
+                            {
+                                @String.Format("{0:0,0} VNĐ", item.GiaBan)
+                            }
+                            else
+                            {
+                                <span>Liên hệ để biết giá</span>
+                            }
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(@item.MaSanGo, -1)">-</button>
+                                <input type="number" class="form-control text-center" value="@item.SoLuong" id="quantity_@item.MaSanGo" min="1" onchange="updateCart(@item.MaSanGo)" />
+                                <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(@item.MaSanGo, 1)">+</button>
+                            </div>
+                        </td>
+                        <td>
+                            @if (item.GiaBan.HasValue)
+                            {
+                                var total = item.GiaBan.Value * item.SoLuong;
+                                @String.Format("{0:0,0} VNĐ", total)
+                            }
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-sm">Xóa</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="text-center mt-4">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                @using (Html.BeginForm("ClearCart", "Home", FormMethod.Post))
+                {
+                    <button type="submit" class="btn btn-danger">Xóa giỏ hàng</button>
+                }
+                <button class="btn btn-success" data-toggle="modal" data-target="#orderModal">Đặt hàng</button>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Modal Đặt Hàng -->
+<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Thông Tin Đặt Hàng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("PlaceOrder", "Home", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <label for="TenKH">Họ Tên</label>
+                        <input type="text" class="form-control" name="TenKH" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="SDT">Số Điện Thoại</label>
+                        <input type="text" class="form-control" name="SDT" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="DiaChi">Địa Chỉ</label>
+                        <input type="text" class="form-control" name="DiaChi" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" class="form-control" name="Email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="HinhThucThanhToan">Hình Thức Thanh Toán</label>
+                        <select class="form-control" name="HinhThucThanhToan">
+                            <option value="Tiền mặt">Tiền mặt</option>
+                            <option value="Chuyển khoản">Chuyển khoản</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Xác Nhận Đặt Hàng</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateQuantity(maSanGo, change) {
+        var quantityInput = document.getElementById('quantity_' + maSanGo);
+        var currentQuantity = parseInt(quantityInput.value) || 0;
+        var newQuantity = currentQuantity + change;
+        if (newQuantity >= 1) {
+            quantityInput.value = newQuantity;
+            updateCart(maSanGo);
+        }
+        } else {
+            alert("Số lượng sản phẩm không thể nhỏ hơn 1.");
+        }
+    }
+
+    function updateCart(maSanGo) {
+        console.log('Cập nhật số lượng cho sản phẩm:', maSanGo);
+    }
+</script>

@@ -1,0 +1,279 @@
+﻿
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding-bottom: 60px;
+    font-family: 'Arial', sans-serif;
+}
+
+.topbar {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 0;
+}
+
+.top_bar_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-top-bar, .list-social {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+    .list-top-bar li {
+        margin-right: 20px;
+    }
+
+    .list-social li {
+        margin-left: 10px;
+    }
+
+    .list-social a {
+        color: #ffffff;
+        transition: color 0.3s;
+    }
+
+        .list-social a:hover {
+            color: #ffc107;
+        }
+
+.header__main {
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header__logo__link img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-search .form-control {
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+}
+
+.header-search .btn {
+    border-radius: 20px;
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+    .header-search .btn:hover {
+        background-color: #495057;
+    }
+
+.header-hotline {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+    .header-hotline i {
+        margin-right: 10px;
+    }
+
+.navbar {
+    background-color: #343a40;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+}
+
+    .navbar-nav .nav-link:hover {
+        background-color: #495057;
+        border-radius: 5px;
+    }
+
+.dropdown-menu {
+    background-color: #343a40;
+}
+
+.dropdown-item {
+    color: #ffffff;
+}
+
+    .dropdown-item:hover {
+        background-color: #495057;
+    }
+
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.username-text {
+    color: yellow;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    max-height: 400px;
+    width: 100%;
+}
+
+.cat_header {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+    .cat_header ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .cat_header li {
+        display: inline;
+        margin-right: 15px;
+    }
+
+    .cat_header a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .cat_header a:hover {
+            text-decoration: underline;
+        }
+
+
+/*CSS card giá tiền*/
+.card {
+    position: relative;
+}
+
+.price-tag {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    background-color: rgba(255, 193, 7, 0.8); 
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+
+/*css về chúng tôi -about*/
+.img-container {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+        .img-container img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+            .img-container img:hover {
+                transform: scale(1.05);
+            }
+
+    .testimonial-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 10px;
+    }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+    .blockquote-footer {
+        font-style: italic;
+        color: #555;
+    }
+
+        .blockquote-footer:before {
+            content: "— ";
+        }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+#product-list .product {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#product-list .product:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-image-wrapper {
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-image-wrapper img {
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+
+.product-image-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+.price-tag {
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.card-title {
+    font-size: 1rem;
+    color: #333;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+

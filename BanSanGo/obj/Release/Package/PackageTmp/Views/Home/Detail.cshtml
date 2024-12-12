@@ -1,0 +1,83 @@
+﻿@model BanSanGo.Models.SanGo
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm - " + Model.TenSanGo.ToUpper();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center display-4 font-weight-bold mb-4 text-primary">@Model.TenSanGo.ToUpper()</h1>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-lg border-0">
+                <img src="@Url.Content(Model.HinhAnh)" alt="@Model.TenSanGo" class="card-img-top img-fluid rounded" />
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-lg border-0">
+                <div class="card-body">
+                    <h4 class="card-title text-uppercase text-primary mb-3">Thông Tin Chi Tiết</h4>
+                    <p class="card-text"><strong>Giá:</strong> @string.Format("{0:0,0} VNĐ", Model.GiaBan)</p>
+                    <p class="card-text"><strong>Số lượng:</strong> @Model.SoLuong</p>
+                    <p class="card-text"><strong>Mô tả:</strong> @Model.MoTa</p>
+
+                    @if (Model.GiaBan == null)
+                    {
+                        <p class="text-danger">Giá sản phẩm chưa được cập nhật. Vui lòng liên hệ để biết thêm thông tin.</p>
+                        <a href="#" class="btn btn-warning btn-block">Liên hệ</a>
+                    }
+                    else
+                    {
+                        <div class="d-flex justify-content-between">
+                            @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post))
+                            {
+                                @Html.Hidden("id", Model.MaSanGo)
+                                @Html.Hidden("redirectUrl", Request.Url.ToString())
+                                <button type="submit" class="btn btn-primary w-48">Thêm vào giỏ hàng</button>
+                            }
+
+                            @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post, new { @class = "d-inline" }))
+                            {
+                                @Html.Hidden("id", Model.MaSanGo)
+                                @Html.Hidden("redirectUrl", Url.Action("Cart", "Home"))
+                                <button type="submit" class="btn btn-success w-48">Mua ngay</button>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center mt-5 mb-4 text-uppercase text-secondary">Sản phẩm nổi bật</h2>
+    <div class="row g-4">
+        @{
+            var random = new Random();
+            var featuredProducts = new List<BanSanGo.Models.SanGo>();
+            using (var context = new BanSanGo.Models.QuanLySanGoEntities())
+            {
+                var allProducts = context.SanGoes.ToList();
+                featuredProducts = allProducts.OrderBy(x => random.Next()).Take(6).ToList();
+            }
+        }
+        @foreach (var product in featuredProducts)
+        {
+            <div class="col-md-4 col-lg-2 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <img src="@Url.Content(product.HinhAnh)" alt="@product.TenSanGo" class="card-img-top img-fluid rounded" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-uppercase text-center">@product.TenSanGo</h5>
+                        <p class="card-text text-center">@string.Format("{0:0,0} VNĐ", product.GiaBan)</p>
+                        <div class="mt-auto">
+                            <a href="@Url.Action("Detail", "Home", new { id = product.MaSanGo })" class="btn btn-primary w-100">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Quay lại Trang CHủ</a>
+    </div>
+</div>

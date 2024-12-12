@@ -1,0 +1,61 @@
+﻿@model BanSanGo.Models.SanGo
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center my-4">Chi Tiết Sản Phẩm</h2>
+
+<div class="card shadow-lg mb-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="m-0">@Model.TenSanGo</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <!-- Thông tin sản phẩm -->
+            <div class="col-md-6">
+                <h5 class="text-primary">Thông tin sản phẩm</h5>
+                <dl class="row">
+                    <dt class="col-sm-4">Tên Sản Gỗ:</dt>
+                    <dd class="col-sm-8 mb-3">@Html.DisplayFor(model => model.TenSanGo)</dd>
+
+                    <dt class="col-sm-4">Số Lượng:</dt>
+                    <dd class="col-sm-8 mb-3">@Html.DisplayFor(model => model.SoLuong)</dd>
+
+                    <dt class="col-sm-4">Giá Bán (VND):</dt>
+                    <dd class="col-sm-8 mb-3">@String.Format("{0:N0} VNĐ", Model.GiaBan)</dd>
+
+                    <dt class="col-sm-4">Mô Tả:</dt>
+                    <dd class="col-sm-8 mb-3" style="word-wrap: break-word;">@Html.DisplayFor(model => model.MoTa)</dd>
+
+                    <dt class="col-sm-4">Loại Sàn Gỗ:</dt>
+                    <dd class="col-sm-8 mb-3">@Html.DisplayFor(model => model.LoaiSanGo.TenLoaiSanGo)</dd>
+                </dl>
+            </div>
+
+            <!-- Hình ảnh sản phẩm -->
+            <div class="col-md-6">
+                <h5 class="text-primary">Hình ảnh sản phẩm</h5>
+                <div class="text-center">
+                    @if (!string.IsNullOrEmpty(Model.HinhAnh))
+                    {
+                        <img src="@Model.HinhAnh" alt="Hình ảnh sản phẩm" class="img-fluid rounded shadow-sm" />
+                    }
+                    else
+                    {
+                        <p class="text-muted">Chưa có hình ảnh</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-between">
+        <div>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaSanGo }, new { @class = "btn btn-warning btn-sm" })
+        </div>
+        <div>
+            @Html.ActionLink("Quay lại danh sách", "Index", new { @class = "btn btn-secondary btn-sm" })
+        </div>
+    </div>
+</div>
